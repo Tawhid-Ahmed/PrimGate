@@ -1,0 +1,21 @@
+# PrimGate — classification fork from MambaLiteUNet principles
+# Torch: install a CUDA build matching your driver first, e.g.
+#   pip install torch torchvision --index-url https://download.pytorch.org/whl/cu128
+
+torch>=2.1.0
+torchvision>=0.16.0
+timm>=0.9.0
+einops>=0.7.0
+numpy>=1.24.0
+pandas>=1.5.0
+Pillow>=10.0.0
+scikit-learn>=1.3.0
+matplotlib>=3.7.0
+tqdm>=4.66.0
+scipy>=1.10.0
+
+# Optional but required for real MambaSSM (not the Conv1d fallback):
+# On Windows this often needs Visual Studio + CUDA toolkit, or use WSL/Linux.
+#   pip install --no-build-isolation causal_conv1d mamba_ssm
+# causal_conv1d>=1.4.0
+# mamba_ssm>=2.2.0
