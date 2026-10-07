@@ -1,0 +1,71 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+*.egg-info/
+.eggs/
+dist/
+build/
+.venv/
+venv/
+env/
+
+# Jupyter / IPython
+.ipynb_checkpoints/
+
+# Testing / coverage
+.pytest_cache/
+.coverage
+htmlcov/
+.mypy_cache/
+.ruff_cache/
+
+# IDE / editor
+.idea/
+.vscode/
+*.swp
+*.swo
+.cursor/
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Training artifacts
+*.pt
+*.pth
+*.ckpt
+*.onnx
+experiments/**/*.pt
+experiments/**/*.pth
+experiments/**/logs/
+experiments/**/checkpoints/
+wandb/
+runs/
+lightning_logs/
+
+# Data (keep paths local; dataset lives outside or large)
+data/
+datasets/
+*.h5
+*.hdf5
+*.npz
+
+# Local secrets / env
+.env
+.env.*
+!.env.example
+*.pem
+credentials.json
+
+# Splits may be committed later; ignore accidental dumps
+# splits/*.json  # uncomment if you prefer generating splits only locally
+
+# Misc
+*.log
+tmp/
+temp/
+.cache/
