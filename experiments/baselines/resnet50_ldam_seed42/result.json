@@ -1,0 +1,15 @@
+{
+  "run": "resnet50_ldam_seed42",
+  "model": "resnet50",
+  "loss": "ldam",
+  "seed": 42,
+  "best_val_macro_f1": 0.4720120346872091,
+  "checkpoint": "experiments\\baselines\\resnet50_ldam_seed42\\best.pt",
+  "test_acc": 0.6060320452403393,
+  "test_macro_f1": 0.3516102782075365,
+  "test_balanced_acc": 0.3638052949758392,
+  "test_acc_many": 0.648471615720524,
+  "test_acc_medium": 0.36885245901639346,
+  "test_acc_few": 0.17391304347826086,
+  "test_sibling_error": 0.7751196172248804
+}

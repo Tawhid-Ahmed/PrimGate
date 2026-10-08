@@ -21,6 +21,15 @@ pip install -r requirements.txt
 # pip install --no-build-isolation causal_conv1d mamba_ssm
 ```
 
+### Local download cache (this drive)
+
+Training/eval scripts call `utils.local_cache.setup_local_caches()` so Torch Hub,
+Hugging Face, and related weights land under:
+
+`f:\Shakil thesis\PrimGate\.cache\`
+
+(not `C:\Users\...\.cache`). That folder is gitignored.
+
 ## Data
 
 Tea images live at:
@@ -56,14 +65,25 @@ PrimGate/
 └── experiments/
 ```
 
-## Next: Phase 1
+## Phase 1 — splits & baselines
 
-1. Stratified 70/15/15 splits → `splits/tea_split_seed42.json`
-2. Macro-F1 / Many-Med-Few / sibling-error metrics
-3. ResNet-50 CE / LDAM / Balanced Softmax baselines
+```bash
+cd "f:\Shakil thesis\PrimGate"
+
+# Frozen stratified 70/15/15 split
+python scripts/make_splits.py
+
+# Single baseline (ResNet-50 + CE)
+python train_cls.py --model resnet50 --loss ce --epochs 50 --eval-test
+
+# Full B1–B3 suite
+python scripts/run_baselines.py --epochs 50
+```
+
+Results land in `experiments/baselines/` and `experiments/baselines/tea_results.csv`.
 
 ## Train (smoke)
 
 ```bash
-python train_cls.py --epochs 1 --batch-size 8
+python train_cls.py --model resnet50 --loss ce --epochs 1 --batch-size 8 --eval-test
 ```

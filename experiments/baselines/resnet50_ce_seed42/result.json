@@ -1,0 +1,15 @@
+{
+  "run": "resnet50_ce_seed42",
+  "model": "resnet50",
+  "loss": "ce",
+  "seed": 42,
+  "best_val_macro_f1": 0.48641543841504986,
+  "checkpoint": "experiments\\baselines\\resnet50_ce_seed42\\best.pt",
+  "test_acc": 0.6286522148916117,
+  "test_macro_f1": 0.3627160159705649,
+  "test_balanced_acc": 0.36300238648455685,
+  "test_acc_many": 0.6812227074235808,
+  "test_acc_medium": 0.3360655737704918,
+  "test_acc_few": 0.08695652173913043,
+  "test_sibling_error": 0.7918781725888325
+}

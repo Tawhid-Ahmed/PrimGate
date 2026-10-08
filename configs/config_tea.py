@@ -10,10 +10,12 @@ class TeaConfig:
     thesis_root = Path(r"f:\Shakil thesis")
     data_root = thesis_root / "processed_dataset"
     split_path = project_root / "splits" / "tea_split_seed42.json"
+    # Heavy downloads (Torch Hub / HF) stay on this drive
+    cache_root = project_root / ".cache"
 
     num_classes = 9
     image_size = 224
-    batch_size = 16
+    batch_size = 64  # ResNet-50 fits easily on 16GB with AMP; override if OOM
     lr = 1e-4
     weight_decay = 1e-4
     epochs = 50

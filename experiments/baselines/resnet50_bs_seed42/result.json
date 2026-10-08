@@ -1,0 +1,15 @@
+{
+  "run": "resnet50_balanced_softmax_seed42",
+  "model": "resnet50",
+  "loss": "balanced_softmax",
+  "seed": 42,
+  "best_val_macro_f1": 0.47840750902877827,
+  "checkpoint": "experiments\\baselines\\resnet50_bs_seed42\\best.pt",
+  "test_acc": 0.590951932139491,
+  "test_macro_f1": 0.4327045787493742,
+  "test_balanced_acc": 0.506708670180226,
+  "test_acc_many": 0.6080786026200873,
+  "test_acc_medium": 0.5,
+  "test_acc_few": 0.391304347826087,
+  "test_sibling_error": 0.7073732718894009
+}

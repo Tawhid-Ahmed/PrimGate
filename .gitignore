@@ -68,4 +68,7 @@ credentials.json
 *.log
 tmp/
 temp/
+
+# Local ML caches (Torch Hub, HF, timm) — stay on project drive, not committed
 .cache/
+docs/
