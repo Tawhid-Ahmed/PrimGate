@@ -1,0 +1,136 @@
+{
+  "acc": 0.6003770028275212,
+  "balanced_acc": 0.47010532263508076,
+  "macro_f1": 0.4033192742889231,
+  "per_class_f1": {
+    "Black Rot - Corticium theae Bernard": 0.3387096774193548,
+    "Blister Blight - Exobasidium vexans": 0.5677966101694916,
+    "Brown Blight - Colletotrichum spp": 0.7323943661971831,
+    "Grey Blight - Pestalotiopsis spp": 0.6197802197802198,
+    "Healthy Leaf": 0.0,
+    "No damage": 0.36,
+    "Pest damage (leaf chewing)": 0.43243243243243246,
+    "Red Rust - cephaleuros": 0.016260162601626018,
+    "Red Spider": 0.5625
+  },
+  "per_class_recall": {
+    "Black Rot - Corticium theae Bernard": 0.29577464788732394,
+    "Blister Blight - Exobasidium vexans": 0.475177304964539,
+    "Brown Blight - Colletotrichum spp": 0.6753246753246753,
+    "Grey Blight - Pestalotiopsis spp": 0.597457627118644,
+    "Healthy Leaf": 0.0,
+    "No damage": 0.6923076923076923,
+    "Pest damage (leaf chewing)": 0.5517241379310345,
+    "Red Rust - cephaleuros": 0.125,
+    "Red Spider": 0.8181818181818182
+  },
+  "confusion_matrix": [
+    [
+      21,
+      0,
+      17,
+      10,
+      0,
+      3,
+      3,
+      15,
+      2
+    ],
+    [
+      1,
+      67,
+      25,
+      22,
+      0,
+      9,
+      12,
+      4,
+      1
+    ],
+    [
+      19,
+      9,
+      364,
+      43,
+      0,
+      8,
+      10,
+      68,
+      18
+    ],
+    [
+      10,
+      15,
+      36,
+      141,
+      0,
+      3,
+      3,
+      25,
+      3
+    ],
+    [
+      0,
+      0,
+      2,
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    [
+      0,
+      1,
+      1,
+      1,
+      0,
+      9,
+      1,
+      0,
+      0
+    ],
+    [
+      0,
+      2,
+      4,
+      1,
+      0,
+      5,
+      16,
+      1,
+      0
+    ],
+    [
+      2,
+      1,
+      4,
+      0,
+      0,
+      0,
+      0,
+      1,
+      0
+    ],
+    [
+      0,
+      0,
+      2,
+      1,
+      0,
+      0,
+      0,
+      1,
+      18
+    ]
+  ],
+  "sibling_error_among_errors": 0.49292452830188677,
+  "sibling_error_G1_blight": 0.20972644376899696,
+  "sibling_error_G2_healthy_like": 0.0,
+  "sibling_error_G3_rare": 0.03389830508474576,
+  "acc_many": 0.6244541484716157,
+  "acc_medium": 0.45081967213114754,
+  "acc_few": 0.43478260869565216,
+  "loss": 0.0
+}

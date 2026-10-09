@@ -1,0 +1,38 @@
+{
+  "gate": "C",
+  "decision": "FAIL",
+  "protocol": "tea_split_seed42_70_15_15",
+  "baseline_ref": {
+    "run": "resnet50_balanced_softmax_seed42",
+    "test_macro_f1": 0.4327045787493742,
+    "test_sibling_error": 0.7073732718894009,
+    "test_acc_few": 0.391304347826087
+  },
+  "primgate_full": {
+    "run": "primgate_full_seed42",
+    "test_macro_f1": 0.3471247698046241,
+    "test_sibling_error": 0.5839552238805971,
+    "test_acc_few": 0.2608695652173913,
+    "params": 906018,
+    "mamba_backend": "conv1d_fallback"
+  },
+  "ablations_test_macro_f1": {
+    "full": 0.3471247698046241,
+    "noCGSF": 0.3303334608029794,
+    "noSPF": 0.3286327849431705,
+    "noSATC": 0.309606619380832
+  },
+  "checks": {
+    "macro_f1_ge_bs": false,
+    "sibling_error_lt_bs": true,
+    "full_best_f1_among_ablations": true,
+    "satc_causally_lowers_sib_err": false,
+    "real_mamba_ssm": false
+  },
+  "next": [
+    "capacity_matched_resnet_backbone",
+    "install_real_mamba_ssm_or_replace_amf",
+    "retune_lambdas_verify_satc_ablation",
+    "rerun_gate_c"
+  ]
+}

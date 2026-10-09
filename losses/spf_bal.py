@@ -1,4 +1,4 @@
-"""Frequency-balanced primitive occupancy loss (SPF) — Phase 3."""
+"""Frequency-balanced primitive occupancy loss (SPF)."""
 
 from __future__ import annotations
 
@@ -17,6 +17,8 @@ class PrimitiveBalanceLoss(nn.Module):
     ) -> torch.Tensor:
         if alpha.ndim != 2:
             raise ValueError("alpha must be (B, K)")
+        if alpha.size(0) == 0:
+            return alpha.new_zeros(())
         if is_head.any() and is_tail.any():
             head_mean = alpha[is_head].mean(dim=0)
             tail_mean = alpha[is_tail].mean(dim=0)

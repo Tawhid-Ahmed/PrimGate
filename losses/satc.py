@@ -1,4 +1,4 @@
-"""Sibling-Aware Tail Contrastive (SATC) — Phase 3."""
+"""Sibling-Aware Tail Contrastive (SATC)."""
 
 from __future__ import annotations
 
@@ -8,7 +8,10 @@ import torch.nn.functional as F
 
 
 class SiblingAwareTailContrastive(nn.Module):
-    """Push embeddings of same-sibling-group samples apart within a batch (margin)."""
+    """
+    Push embeddings of different classes in the same sibling group apart (margin).
+    Vectorized pairwise formulation for batch efficiency.
+    """
 
     def __init__(self, margin: float = 0.5):
         super().__init__()
@@ -18,22 +21,24 @@ class SiblingAwareTailContrastive(nn.Module):
         self,
         embeddings: torch.Tensor,
         labels: torch.Tensor,
-        sibling_of: dict[int, int],
+        class_to_group: torch.Tensor,
     ) -> torch.Tensor:
-        # sibling_of: class_id -> group_id
+        """
+        Args:
+            embeddings: (B, D)
+            labels: (B,)
+            class_to_group: (num_classes,) int group id per class
+        """
         if embeddings.size(0) < 2:
             return embeddings.new_zeros(())
+
         z = F.normalize(embeddings, dim=1)
-        loss = embeddings.new_zeros(())
-        n_pairs = 0
-        for i in range(z.size(0)):
-            for j in range(i + 1, z.size(0)):
-                gi = sibling_of.get(int(labels[i]), -1)
-                gj = sibling_of.get(int(labels[j]), -1)
-                if gi == gj and gi >= 0 and int(labels[i]) != int(labels[j]):
-                    dist = torch.norm(z[i] - z[j], p=2)
-                    loss = loss + F.relu(self.margin - dist)
-                    n_pairs += 1
-        if n_pairs == 0:
+        groups = class_to_group[labels]
+        dist = torch.cdist(z, z, p=2)
+        same_group = groups.unsqueeze(0) == groups.unsqueeze(1)
+        diff_class = labels.unsqueeze(0) != labels.unsqueeze(1)
+        eye = torch.eye(labels.size(0), device=labels.device, dtype=torch.bool)
+        mask = same_group & diff_class & (~eye)
+        if not mask.any():
             return embeddings.new_zeros(())
-        return loss / n_pairs
+        return F.relu(self.margin - dist)[mask].mean()

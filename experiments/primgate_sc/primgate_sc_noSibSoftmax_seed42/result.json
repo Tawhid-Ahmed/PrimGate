@@ -1,0 +1,22 @@
+{
+  "run": "primgate_sc_noSibSoftmax_seed42",
+  "model": "primgate_sc",
+  "backbone": "resnet50",
+  "feat_dim": 256,
+  "best_val_macro_f1": 0.36656964804967157,
+  "checkpoint": "experiments\\primgate_sc\\primgate_sc_noSibSoftmax_seed42\\best.pt",
+  "use_cgsf": true,
+  "use_group_proto": true,
+  "use_sib": false,
+  "lambda_sib": 0.0,
+  "stopped_epoch": 29,
+  "test_acc": 0.5815268614514609,
+  "test_macro_f1": 0.3531393205868399,
+  "test_balanced_acc": 0.4093311961319088,
+  "test_acc_many": 0.6222707423580786,
+  "test_acc_medium": 0.3114754098360656,
+  "test_acc_few": 0.391304347826087,
+  "test_G1": 0.2512664640324215,
+  "test_sib_among": 0.5653153153153153,
+  "test_Healthy_f1": 0.0
+}

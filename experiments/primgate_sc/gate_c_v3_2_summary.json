@@ -1,0 +1,27 @@
+{
+  "gate": "C_v3_2",
+  "decision": "FAIL",
+  "detail": "composite beta=0.35 + strong reg collapsed Macro-F1 while G1 improved further",
+  "selection_audit": "experiments/primgate_sc/selection_audit/selection_audit.md",
+  "baseline": {"test_macro_f1": 0.4327, "test_G1": 0.3100},
+  "stable_seeds": {
+    "42": {"test_macro_f1": 0.3252, "test_G1": 0.1499, "best_epoch": 25},
+    "43": {"test_macro_f1": 0.3040, "test_G1": 0.0588, "best_epoch": 7},
+    "44": {"test_macro_f1": 0.2886, "test_G1": 0.1084, "best_epoch": 3},
+    "mean_macro_f1": 0.3059,
+    "std_macro_f1": 0.0183,
+    "mean_G1": 0.1057,
+    "std_G1": 0.0457
+  },
+  "best_reference": {
+    "run": "primgate_sc_noGroupProto_seed42",
+    "test_macro_f1": 0.4033,
+    "test_G1": 0.2097,
+    "notes": "F1-only selection, WD=1e-4, no label smoothing"
+  },
+  "checks": {
+    "test_macro_f1_ge_bs": false,
+    "g1_lt_bs": true,
+    "improved_over_prior_sc_f1": false
+  }
+}

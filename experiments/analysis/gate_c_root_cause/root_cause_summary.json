@@ -1,0 +1,302 @@
+{
+  "dataset": {
+    "root": "f:\\Shakil thesis\\processed_dataset",
+    "split": "f:\\Shakil thesis\\PrimGate\\splits\\tea_split_seed42.json",
+    "train_counts": [
+      331,
+      662,
+      2516,
+      1104,
+      12,
+      64,
+      134,
+      40,
+      106
+    ],
+    "test_counts": [
+      71,
+      141,
+      539,
+      236,
+      2,
+      13,
+      29,
+      8,
+      22
+    ],
+    "classes": [
+      "Black Rot - Corticium theae Bernard",
+      "Blister Blight - Exobasidium vexans",
+      "Brown Blight - Colletotrichum spp",
+      "Grey Blight - Pestalotiopsis spp",
+      "Healthy Leaf",
+      "No damage",
+      "Pest damage (leaf chewing)",
+      "Red Rust - cephaleuros",
+      "Red Spider"
+    ],
+    "note": "Custom tea pathology LT set; prep OK; hardness = imbalance + siblings + tiny Healthy"
+  },
+  "metrics_table": {
+    "BS": {
+      "macro_f1": 0.4327045787493742,
+      "sib_among_errors": 0.7073732718894009,
+      "G1_blight": 0.3100303951367781,
+      "acc_many": 0.6080786026200873,
+      "acc_medium": 0.5,
+      "acc_few": 0.391304347826087,
+      "Healthy_f1": 0.4,
+      "Brown_f1": 0.7203980099502487,
+      "acc": 0.590951932139491
+    },
+    "r50_full": {
+      "macro_f1": 0.42434841847082894,
+      "sib_among_errors": 0.782016348773842,
+      "G1_blight": 0.2907801418439716,
+      "acc_many": 0.7041484716157205,
+      "acc_medium": 0.3442622950819672,
+      "acc_few": 0.30434782608695654,
+      "Healthy_f1": 0.0,
+      "Brown_f1": 0.7712177121771218,
+      "acc": 0.6540999057492931
+    },
+    "r50_noCGSF": {
+      "macro_f1": 0.3541514216870814,
+      "sib_among_errors": 0.6544276457883369,
+      "G1_blight": 0.3029381965552178,
+      "acc_many": 0.5982532751091703,
+      "acc_medium": 0.3770491803278688,
+      "acc_few": 0.17391304347826086,
+      "Healthy_f1": 0.0,
+      "Brown_f1": 0.6965589155370178,
+      "acc": 0.5636192271442035
+    },
+    "r50_noSPF": {
+      "macro_f1": 0.4386307296600686,
+      "sib_among_errors": 0.7242206235011991,
+      "G1_blight": 0.3059777102330294,
+      "acc_many": 0.648471615720524,
+      "acc_medium": 0.36885245901639346,
+      "acc_few": 0.21739130434782608,
+      "Healthy_f1": 0.6666666666666666,
+      "Brown_f1": 0.7300303336703741,
+      "acc": 0.6069745523091423
+    },
+    "r50_noSATC": {
+      "macro_f1": 0.35201903271909446,
+      "sib_among_errors": 0.7686375321336761,
+      "G1_blight": 0.3029381965552178,
+      "acc_many": 0.6855895196506551,
+      "acc_medium": 0.3442622950819672,
+      "acc_few": 0.08695652173913043,
+      "Healthy_f1": 0.0,
+      "Brown_f1": 0.7595541401273885,
+      "acc": 0.6333647502356268
+    }
+  },
+  "error_structure": {
+    "BS": {
+      "n_errors": 434,
+      "n_correct": 627,
+      "within_g1_errors": 306,
+      "within_other_sib_errors": 1,
+      "cross_group_errors": 127,
+      "frac_errors_within_g1": 0.7050691244239631,
+      "frac_errors_cross_group": 0.2926267281105991,
+      "g1_sibling_rate_all_g1": 0.3100303951367781
+    },
+    "r50_full": {
+      "n_errors": 365,
+      "n_correct": 696,
+      "within_g1_errors": 288,
+      "within_other_sib_errors": 0,
+      "cross_group_errors": 77,
+      "frac_errors_within_g1": 0.7890410958904109,
+      "frac_errors_cross_group": 0.21095890410958903,
+      "g1_sibling_rate_all_g1": 0.2917933130699088
+    },
+    "r50_noCGSF": {
+      "n_errors": 462,
+      "n_correct": 599,
+      "within_g1_errors": 299,
+      "within_other_sib_errors": 4,
+      "cross_group_errors": 159,
+      "frac_errors_within_g1": 0.6471861471861472,
+      "frac_errors_cross_group": 0.34415584415584416,
+      "g1_sibling_rate_all_g1": 0.3029381965552178
+    },
+    "r50_noSPF": {
+      "n_errors": 418,
+      "n_correct": 643,
+      "within_g1_errors": 302,
+      "within_other_sib_errors": 0,
+      "cross_group_errors": 116,
+      "frac_errors_within_g1": 0.722488038277512,
+      "frac_errors_cross_group": 0.27751196172248804,
+      "g1_sibling_rate_all_g1": 0.3059777102330294
+    },
+    "r50_noSATC": {
+      "n_errors": 387,
+      "n_correct": 674,
+      "within_g1_errors": 298,
+      "within_other_sib_errors": 0,
+      "cross_group_errors": 89,
+      "frac_errors_within_g1": 0.7700258397932817,
+      "frac_errors_cross_group": 0.22997416020671835,
+      "g1_sibling_rate_all_g1": 0.30192502532928067
+    }
+  },
+  "hijack_remeasure": {
+    "BS": {
+      "hijack_l2": 0.011197102256119251,
+      "hijack_l1": 0.3211025893688202,
+      "corr_error_vs_head_overlap_sample": -0.3287369279512128,
+      "G1_from_preds": 0.3100303951367781
+    },
+    "r50_full": {
+      "hijack_l2": 0.007390298880636692,
+      "hijack_l1": 0.3047187924385071,
+      "corr_error_vs_head_overlap_sample": -0.23459715574359558,
+      "G1_from_preds": 0.2917933130699088
+    },
+    "r50_noCGSF": {
+      "hijack_l2": 0.04231473058462143,
+      "hijack_l1": 0.7186067700386047,
+      "corr_error_vs_head_overlap_sample": -0.25350367164811527,
+      "G1_from_preds": 0.3029381965552178
+    },
+    "r50_noSPF": {
+      "hijack_l2": 3.231621903410087e-08,
+      "hijack_l1": 0.0005637146532535553,
+      "corr_error_vs_head_overlap_sample": -0.23155507618121005,
+      "G1_from_preds": 0.3059777102330294
+    },
+    "r50_noSATC": {
+      "hijack_l2": 0.0009329137392342091,
+      "hijack_l1": 0.10610990226268768,
+      "corr_error_vs_head_overlap_sample": -0.16856016614163366,
+      "G1_from_preds": 0.30192502532928067
+    }
+  },
+  "history_summary": {
+    "BS": {
+      "epochs": 30,
+      "train_loss_min": 0.12102736907841143,
+      "train_loss_final": 0.1329848383886758,
+      "train_loss_explosion_ratio": 1.0987997128361715,
+      "best_val_macro_f1": 0.47840750902877827,
+      "best_epoch": 9,
+      "final_val_macro_f1": 0.42708184730584287
+    },
+    "r50_full": {
+      "epochs": 30,
+      "train_loss_min": 0.4563122699020326,
+      "train_loss_final": 22.556301708455585,
+      "train_loss_explosion_ratio": 49.43172295870607,
+      "best_val_macro_f1": 0.43346821446351885,
+      "best_epoch": 26,
+      "final_val_macro_f1": 0.393403808534418
+    },
+    "r50_noCGSF": {
+      "epochs": 30,
+      "train_loss_min": 0.1799485411687645,
+      "train_loss_final": 0.1799485411687645,
+      "train_loss_explosion_ratio": 1.0,
+      "best_val_macro_f1": 0.41251551894344074,
+      "best_epoch": 16,
+      "final_val_macro_f1": 0.38203546808551353
+    },
+    "r50_noSPF": {
+      "epochs": 30,
+      "train_loss_min": 0.35067461156034213,
+      "train_loss_final": 30.400241546262365,
+      "train_loss_explosion_ratio": 86.69073991697076,
+      "best_val_macro_f1": 0.46476010135925055,
+      "best_epoch": 24,
+      "final_val_macro_f1": 0.4505498987848207
+    },
+    "r50_noSATC": {
+      "epochs": 30,
+      "train_loss_min": 0.43771989969845915,
+      "train_loss_final": 15.543130035538576,
+      "train_loss_explosion_ratio": 35.50930639947163,
+      "best_val_macro_f1": 0.43637181905399836,
+      "best_epoch": 30,
+      "final_val_macro_f1": 0.43637181905399836
+    }
+  },
+  "causes": {
+    "metric_trap": {
+      "claim": "sib_among_errors rose while G1 blight rate did not worsen vs BS",
+      "BS_sib_among": 0.7073732718894009,
+      "BS_G1": 0.3100303951367781,
+      "full_sib_among": 0.782016348773842,
+      "full_G1": 0.2907801418439716,
+      "verdict": true
+    },
+    "spf_harms_healthy": {
+      "full_Healthy_f1": 0.0,
+      "noSPF_Healthy_f1": 0.6666666666666666,
+      "noSPF_macro_f1": 0.4386307296600686,
+      "full_macro_f1": 0.42434841847082894,
+      "verdict": true
+    },
+    "satc_helps_f1_not_g1": {
+      "full_macro_f1": 0.42434841847082894,
+      "noSATC_macro_f1": 0.35201903271909446,
+      "full_G1": 0.2907801418439716,
+      "noSATC_G1": 0.3029381965552178,
+      "delta_f1": 0.07232938575173448,
+      "delta_G1": -0.012158054711246202
+    },
+    "cgsf_helps_f1": {
+      "full_macro_f1": 0.42434841847082894,
+      "noCGSF_macro_f1": 0.3541514216870814,
+      "verdict": true
+    },
+    "hijack_not_closed": {
+      "BS": 0.011197102256119251,
+      "r50_full": 0.007390298880636692,
+      "r50_noCGSF": 0.04231473058462143,
+      "r50_noSPF": 3.231621903410087e-08,
+      "r50_noSATC": 0.0009329137392342091
+    },
+    "loss_instability": {
+      "BS": {
+        "explosion_ratio": 1.0987997128361715,
+        "best_epoch": 9
+      },
+      "r50_full": {
+        "explosion_ratio": 49.43172295870607,
+        "best_epoch": 26
+      },
+      "r50_noCGSF": {
+        "explosion_ratio": 1.0,
+        "best_epoch": 16
+      },
+      "r50_noSPF": {
+        "explosion_ratio": 86.69073991697076,
+        "best_epoch": 24
+      },
+      "r50_noSATC": {
+        "explosion_ratio": 35.50930639947163,
+        "best_epoch": 30
+      }
+    }
+  },
+  "gate_c_v3_protocol": {
+    "primary": [
+      "macro_f1",
+      "sibling_error_G1_blight",
+      "hijack_l2"
+    ],
+    "secondary": [
+      "acc_few",
+      "Healthy_f1"
+    ],
+    "diagnostic_only": [
+      "sibling_error_among_errors"
+    ]
+  },
+  "recommended_next": "PrimGate-SC: keep CGSF; drop global L_bal SPF; replace SATC with sibling-conditional softmax + group-conditional protos"
+}

@@ -1,1 +1,3 @@
-# Analysis utilities (hijacking score, sibling errors, bootstrap CI) — Phases 2–3.
+from .hijacking import HijackingResult, analyze_hijacking, compute_hijacking_score
+
+__all__ = ["HijackingResult", "analyze_hijacking", "compute_hijacking_score"]

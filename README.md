@@ -82,6 +82,15 @@ python scripts/run_baselines.py --epochs 50
 
 Results land in `experiments/baselines/` and `experiments/baselines/tea_results.csv`.
 
+## Phase 2 — hijacking analysis (RQ1)
+
+```bash
+python scripts/run_hijacking_analysis.py --checkpoint experiments/baselines/resnet50_ce_seed42/best.pt
+python scripts/run_hijacking_analysis.py --checkpoint experiments/baselines/resnet50_bs_seed42/best.pt
+```
+
+Outputs: `experiments/analysis/hijack_*/` + report `docs/rq1_hijacking_report.md`.
+
 ## Train (smoke)
 
 ```bash

@@ -52,18 +52,24 @@ class LDAMLoss(nn.Module):
 class BalancedSoftmaxLoss(nn.Module):
     """Balanced Softmax (Ren et al., NeurIPS 2020)."""
 
-    def __init__(self, cls_num_list: list[int]):
+    def __init__(self, cls_num_list: list[int], label_smoothing: float = 0.0):
         super().__init__()
         priors = torch.tensor(cls_num_list, dtype=torch.float32).clamp(min=1)
         self.register_buffer("log_prior", torch.log(priors))
+        self.label_smoothing = float(label_smoothing)
 
     def forward(self, logits: torch.Tensor, targets: torch.Tensor) -> torch.Tensor:
-        return F.cross_entropy(logits + self.log_prior.unsqueeze(0), targets)
+        return F.cross_entropy(
+            logits + self.log_prior.unsqueeze(0),
+            targets,
+            label_smoothing=self.label_smoothing,
+        )
 
 
 def build_loss(
     name: str,
     cls_num_list: list[int] | None = None,
+    label_smoothing: float = 0.0,
 ) -> nn.Module:
     key = name.lower().replace("-", "_")
     if key in {"ce", "cross_entropy"}:
@@ -73,5 +79,5 @@ def build_loss(
     if key == "ldam":
         return LDAMLoss(cls_num_list)
     if key in {"balanced_softmax", "bs", "bal_softmax"}:
-        return BalancedSoftmaxLoss(cls_num_list)
+        return BalancedSoftmaxLoss(cls_num_list, label_smoothing=label_smoothing)
     raise ValueError(f"Unknown loss: {name}")

@@ -1,0 +1,21 @@
+{
+  "run": "primgate_r50_full_seed42",
+  "model": "primgate",
+  "backbone": "resnet50",
+  "feat_dim": 256,
+  "best_val_macro_f1": 0.43346821446351885,
+  "checkpoint": "experiments\\primgate\\primgate_r50_full_seed42\\best.pt",
+  "use_cgsf": true,
+  "use_spf": true,
+  "use_satc": true,
+  "use_amf": true,
+  "lambda_satc": 0.3,
+  "lambda_bal": 0.5,
+  "test_acc": 0.6540999057492931,
+  "test_macro_f1": 0.42434841847082894,
+  "test_balanced_acc": 0.41878359314050845,
+  "test_acc_many": 0.7041484716157205,
+  "test_acc_medium": 0.3442622950819672,
+  "test_acc_few": 0.30434782608695654,
+  "test_sibling_error": 0.782016348773842
+}

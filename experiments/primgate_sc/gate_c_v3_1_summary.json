@@ -1,0 +1,22 @@
+{
+  "gate": "C_v3_1",
+  "decision": "FAIL",
+  "detail": "lambda_sib sweep improved val F1 but not test F1; G1 still better than BS",
+  "baseline": {"test_macro_f1": 0.4327, "test_G1": 0.3100},
+  "sweep": {
+    "0.15": {"test_macro_f1": 0.3617, "test_G1": 0.2432, "val_macro_f1": 0.4328},
+    "0.25": {"test_macro_f1": 0.3746, "test_G1": 0.2634, "val_macro_f1": 0.4400},
+    "0.35": {"test_macro_f1": 0.3730, "test_G1": 0.2300, "val_macro_f1": 0.4297}
+  },
+  "best_sc_so_far": {
+    "run": "primgate_sc_noGroupProto_seed42",
+    "lambda_sib": 0.5,
+    "test_macro_f1": 0.4033,
+    "test_G1": 0.2097
+  },
+  "checks": {
+    "test_macro_f1_ge_bs": false,
+    "g1_lt_bs": true,
+    "lower_lambda_recovers_test_f1": false
+  }
+}

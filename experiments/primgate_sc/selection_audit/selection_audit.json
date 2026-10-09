@@ -1,0 +1,125 @@
+{
+  "beta": 0.35,
+  "runs": [
+    {
+      "run": "primgate_sc_cgsf_sib_l0p15_seed42",
+      "f1_pick_epoch": 7,
+      "f1_pick_val_f1": 0.43280752186801735,
+      "f1_pick_val_G1": 0.2527805864509606,
+      "comp_pick_epoch": 7,
+      "comp_pick_val_f1": 0.43280752186801735,
+      "comp_pick_val_G1": 0.2527805864509606,
+      "epoch_delta": 0,
+      "test_macro_f1": 0.36172436879439585,
+      "test_G1": 0.24316109422492402
+    },
+    {
+      "run": "primgate_sc_cgsf_sib_l0p25_seed42",
+      "f1_pick_epoch": 26,
+      "f1_pick_val_f1": 0.4399657073367054,
+      "f1_pick_val_G1": 0.2487360970677452,
+      "comp_pick_epoch": 22,
+      "comp_pick_val_f1": 0.4394238855648726,
+      "comp_pick_val_G1": 0.24266936299292213,
+      "epoch_delta": -4,
+      "test_macro_f1": 0.3746378975217246,
+      "test_G1": 0.2634245187436677
+    },
+    {
+      "run": "primgate_sc_cgsf_sib_l0p35_seed42",
+      "f1_pick_epoch": 9,
+      "f1_pick_val_f1": 0.42966624611623616,
+      "f1_pick_val_G1": 0.20626895854398383,
+      "comp_pick_epoch": 9,
+      "comp_pick_val_f1": 0.42966624611623616,
+      "comp_pick_val_G1": 0.20626895854398383,
+      "epoch_delta": 0,
+      "test_macro_f1": 0.37303036713383403,
+      "test_G1": 0.22998986828774062
+    },
+    {
+      "run": "primgate_sc_full_seed42",
+      "f1_pick_epoch": 19,
+      "f1_pick_val_f1": 0.3655773521505247,
+      "f1_pick_val_G1": 0.21132457027300303,
+      "comp_pick_epoch": 19,
+      "comp_pick_val_f1": 0.3655773521505247,
+      "comp_pick_val_G1": 0.21132457027300303,
+      "epoch_delta": 0,
+      "test_macro_f1": 0.351134194978445,
+      "test_G1": 0.1894630192502533
+    },
+    {
+      "run": "primgate_sc_noCGSF_seed42",
+      "f1_pick_epoch": 26,
+      "f1_pick_val_f1": 0.37074346071795516,
+      "f1_pick_val_G1": 0.24671385237613752,
+      "comp_pick_epoch": 13,
+      "comp_pick_val_f1": 0.361198838414288,
+      "comp_pick_val_G1": 0.19312436804853386,
+      "epoch_delta": -13,
+      "test_macro_f1": 0.37203708187702084,
+      "test_G1": 0.22188449848024316
+    },
+    {
+      "run": "primgate_sc_noGroupProto_seed42",
+      "f1_pick_epoch": 9,
+      "f1_pick_val_f1": 0.4191069079442344,
+      "f1_pick_val_G1": 0.21435793731041455,
+      "comp_pick_epoch": 9,
+      "comp_pick_val_f1": 0.4191069079442344,
+      "comp_pick_val_G1": 0.21435793731041455,
+      "epoch_delta": 0,
+      "test_macro_f1": 0.4033192742889231,
+      "test_G1": 0.20972644376899696
+    },
+    {
+      "run": "primgate_sc_noSibSoftmax_seed42",
+      "f1_pick_epoch": 19,
+      "f1_pick_val_f1": 0.36656964804967157,
+      "f1_pick_val_G1": 0.2527805864509606,
+      "comp_pick_epoch": 19,
+      "comp_pick_val_f1": 0.36656964804967157,
+      "comp_pick_val_G1": 0.2527805864509606,
+      "epoch_delta": 0,
+      "test_macro_f1": 0.3531393205868399,
+      "test_G1": 0.2512664640324215
+    },
+    {
+      "run": "primgate_sc_stable_l0p50_seed42",
+      "f1_pick_epoch": 30,
+      "f1_pick_val_f1": 0.34054558906254484,
+      "f1_pick_val_G1": 0.15166835187057634,
+      "comp_pick_epoch": 25,
+      "comp_pick_val_f1": 0.3396499771044112,
+      "comp_pick_val_G1": 0.1435793731041456,
+      "epoch_delta": -5,
+      "test_macro_f1": 0.3251886590769531,
+      "test_G1": 0.14994934143870314
+    },
+    {
+      "run": "primgate_sc_stable_l0p50_seed43",
+      "f1_pick_epoch": 19,
+      "f1_pick_val_f1": 0.3214725898238486,
+      "f1_pick_val_G1": 0.12537917087967643,
+      "comp_pick_epoch": 7,
+      "comp_pick_val_f1": 0.31409319977601435,
+      "comp_pick_val_G1": 0.07077856420626896,
+      "epoch_delta": -12,
+      "test_macro_f1": 0.3040382808843971,
+      "test_G1": 0.05876393110435663
+    },
+    {
+      "run": "primgate_sc_stable_l0p50_seed44",
+      "f1_pick_epoch": 14,
+      "f1_pick_val_f1": 0.3207980275797252,
+      "f1_pick_val_G1": 0.1385237613751264,
+      "comp_pick_epoch": 3,
+      "comp_pick_val_f1": 0.31252582795445033,
+      "comp_pick_val_G1": 0.10616784630940344,
+      "epoch_delta": -11,
+      "test_macro_f1": 0.2886430039395757,
+      "test_G1": 0.10840932117527863
+    }
+  ]
+}

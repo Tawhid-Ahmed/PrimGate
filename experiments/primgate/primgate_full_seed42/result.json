@@ -1,0 +1,16 @@
+{
+  "run": "primgate_full_seed42",
+  "model": "primgate",
+  "best_val_macro_f1": 0.3565373036037486,
+  "checkpoint": "experiments\\primgate\\primgate_full_seed42\\best.pt",
+  "use_cgsf": true,
+  "use_spf": true,
+  "use_satc": true,
+  "test_acc": 0.4948162111215834,
+  "test_macro_f1": 0.3471247698046241,
+  "test_balanced_acc": 0.41490614210820076,
+  "test_acc_many": 0.5,
+  "test_acc_medium": 0.5,
+  "test_acc_few": 0.2608695652173913,
+  "test_sibling_error": 0.5839552238805971
+}

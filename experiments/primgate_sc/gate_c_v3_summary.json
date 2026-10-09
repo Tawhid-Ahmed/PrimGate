@@ -1,0 +1,31 @@
+{
+  "gate": "C_v3",
+  "decision": "PARTIAL_PASS",
+  "detail": "G1 sibling novelty confirmed; Macro-F1 still below BS",
+  "baseline_ref": {
+    "test_macro_f1": 0.4327,
+    "test_G1": 0.3100,
+    "test_acc_few": 0.3913
+  },
+  "sc_full": {
+    "test_macro_f1": 0.3511,
+    "test_G1": 0.1895,
+    "test_acc_few": 0.6522
+  },
+  "best_sc_f1_config": {
+    "run": "primgate_sc_noGroupProto_seed42",
+    "test_macro_f1": 0.4033,
+    "test_G1": 0.2097
+  },
+  "checks": {
+    "macro_f1_ge_bs": false,
+    "g1_lt_bs": true,
+    "sib_softmax_ablation_supports_g1": true,
+    "group_proto_helps_f1": false
+  },
+  "next": [
+    "cgsf_sibsoftmax_lambda_sweep",
+    "drop_or_redesign_group_proto",
+    "gate_c_v3_1"
+  ]
+}

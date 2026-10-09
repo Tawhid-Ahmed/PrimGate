@@ -1,0 +1,34 @@
+{
+  "gate": "C_v2",
+  "decision": "FAIL",
+  "reason": "Macro-F1 nearly matches BS after capacity match, but sibling-error is worse and SPF ablation improves F1",
+  "protocol": "tea_split_seed42_70_15_15",
+  "backbone": "resnet50_dual_layer4_shared_stem",
+  "mamba_backend": "conv1d_fallback",
+  "baseline_ref": {
+    "run": "resnet50_balanced_softmax_seed42",
+    "test_macro_f1": 0.4327045787493742,
+    "test_sibling_error": 0.7073732718894009,
+    "test_acc_few": 0.391304347826087
+  },
+  "runs": {
+    "full": {"test_macro_f1": 0.42434841847082894, "test_sibling_error": 0.782016348773842, "test_acc_few": 0.30434782608695654},
+    "noCGSF": {"test_macro_f1": 0.3541514216870814, "test_sibling_error": 0.6544276457883369, "test_acc_few": 0.17391304347826086},
+    "noSPF": {"test_macro_f1": 0.4386307296600686, "test_sibling_error": 0.7242206235011991, "test_acc_few": 0.21739130434782608},
+    "noSATC": {"test_macro_f1": 0.35201903271909446, "test_sibling_error": 0.7686375321336761, "test_acc_few": 0.08695652173913043}
+  },
+  "checks": {
+    "macro_f1_ge_bs_full": false,
+    "sibling_error_lt_bs_full": false,
+    "cgsf_helps_f1": true,
+    "satc_helps_f1_or_few": true,
+    "spf_helps_f1": false,
+    "real_mamba_ssm": false
+  },
+  "next": [
+    "prefer_cgsf_satc_without_spf_or_retune_spf",
+    "make_satc_reduce_sibling_error_vs_bs",
+    "real_mamba_or_replace_amf",
+    "rerun_gate_c"
+  ]
+}
